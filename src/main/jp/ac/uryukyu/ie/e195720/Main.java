@@ -9,7 +9,7 @@ public class Main extends JFrame {
         setTitle("ワンワン戦線");
 
         // メインパネルを作成してフレームに追加
-        Paint panel = new Paint();
+        LivingThing panel = new LivingThing();
         Container contentPane = getContentPane();
         contentPane.add(panel);
 
