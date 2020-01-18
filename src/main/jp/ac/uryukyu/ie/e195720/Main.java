@@ -27,6 +27,7 @@ public class Main extends JFrame {
         System.out.println(enemy.getX());
         System.out.println(hero.getX());
 
+
         while (true){
             hero.move();
             enemy.move();

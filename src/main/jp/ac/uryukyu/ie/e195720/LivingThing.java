@@ -11,10 +11,9 @@ public class LivingThing extends JPanel {
     private String name;
     private int hitPoint;
     private int attack;
-
     private boolean dead;
-    int x;
-    int y;
+    int x ;
+    int y ;
 
     String pass = "/Users/e195720/Image/";
     Image slime = Toolkit.getDefaultToolkit().getImage(pass + "boss.png");
