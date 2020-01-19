@@ -11,9 +11,10 @@ public class LivingThing extends JPanel {
     private String name;
     private int hitPoint;
     private int attack;
+
     private boolean dead;
-    int x ;
-    int y ;
+    int x;
+    int y;
 
     String pass = "/Users/e195720/Image/";
     Image slime = Toolkit.getDefaultToolkit().getImage(pass + "boss.png");
@@ -64,13 +65,18 @@ public class LivingThing extends JPanel {
         this.hitPoint = HP;
     }
 
-
-
     public int getY() {return y;}
     public int getX() {return x;}
 
     public void move(){
+        repaint();
         x = x +1;
+
+        try {
+            Thread.sleep(5); //　アニメーションらしくするため
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -101,7 +107,6 @@ public class LivingThing extends JPanel {
             System.out.printf("%sは倒れた。\n", name);
         }
     }
-
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(slime, Ex, Ey, 100, 100, this);
@@ -114,11 +119,19 @@ public class LivingThing extends JPanel {
         repaint();
         Ex = Ex + 1;
         Mx = Mx - 1;
-
-        try {
-            Thread.sleep(10); //　アニメーションらしくするため
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        if(Ex == Mx - 120){
+            try {
+                Thread.sleep(1000); //　アニメーションらしくするため
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }else {
+            try {
+                Thread.sleep(10); //　アニメーションらしくするため
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 }

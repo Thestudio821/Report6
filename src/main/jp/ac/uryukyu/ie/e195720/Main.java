@@ -19,14 +19,13 @@ public class Main extends JFrame {
 
     public static void main(String[] args) {
         Hero hero = new Hero("勇者", 10, 5, 780,50);
-        Enemy enemy = new Enemy("スライム", 6, 3, 20,50);
+        Enemy enemy = new Enemy("スライム",  6, 3, 20,50);
 
         Main frame = new Main();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
         System.out.println(enemy.getX());
         System.out.println(hero.getX());
-
 
         while (true){
             hero.move();

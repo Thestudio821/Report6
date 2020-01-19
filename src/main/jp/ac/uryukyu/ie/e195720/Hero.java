@@ -1,5 +1,7 @@
 package jp.ac.uryukyu.ie.e195720;
 
+import java.awt.*;
+
 public class Hero extends LivingThing {
     Hero(String name, int maximumHP, int attack, int x, int y){
         super(name, maximumHP, attack, x, y);
@@ -18,6 +20,13 @@ public class Hero extends LivingThing {
     }
     @Override
     public void move(){
+        repaint();
         x = x -1;
+
+        try {
+            Thread.sleep(5); //　アニメーションらしくするため
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
